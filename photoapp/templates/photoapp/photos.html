@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<html>
+    <style>
+        .container{
+            margin-top: 20px;
+        }
+
+        .container div {
+            width: 250px;
+            {% comment %} height: 500px; {% endcomment %}
+            {% comment %} background-color: antiquewhite; {% endcomment %}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            {% comment %} border: 1px solid black; {% endcomment %}
+        }
+
+        .container img {
+            width: 100%;
+        }
+
+    </style>
+
+    <div class="container">
+
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/1.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/14.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/30.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/91.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/87.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/93.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/54.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/45.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/41.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/21.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/49.jpeg" /></div>
+        <div class="photo"><img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/photos/11.jpeg" /></div>
+    </div>
+
+    <div style='text-align: center;'>
+        <a href="{% url 'photoapp:create'%}" class="btn btn-dark rounded-pill col-6 mt-3">
+            Create Image
+        </a>
+    </div>
+    <script src="{% static 'js/magicgrid.js'%}"></script>
+
+</html>
+
+{% endblock %}

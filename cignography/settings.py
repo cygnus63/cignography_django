@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'main',
     'photoapp',
     'accountapp',
-    'bootstrap4'
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

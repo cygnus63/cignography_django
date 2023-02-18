@@ -38,6 +38,7 @@
         {% else %}
             <div class="buttons_div">
                 <a href = "{% url 'accountapp:logout' %}?next={{ request.path }}">Logout</a>
+                <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
             </div>
         {% endif %}
     </div>

@@ -37,28 +37,28 @@ class AccountCreateView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('main:intro')
     # reverse_lazy는 함수와 클래스의 불러오는 방식이 달라짐. 클래스에서 reverse를 사용할 수 없음.
-    template_name = 'create.html'
+    template_name = 'accountapp/create.html'
     # 어느 html을 쓸지.
 
-# class AccountDetailView(DetailView):
-#     model = User
-#     context_object_name = 'target_user'
-#     template_name = 'detail.html'
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
 
 # @method_decorator(has_ownership, 'get')
 # @method_decorator(has_ownership, 'post')
 
-# class AccountUpdateView(UpdateView):
-#     model = User
-#     form_class = AccountUpdateForm
-#     context_object_name = 'target_user'
-#     template_name = 'update.html'
+class AccountUpdateView(UpdateView):
+    model = User
+    form_class = AccountUpdateForm
+    context_object_name = 'target_user'
+    template_name = 'accountapp/update.html'
 
 # @method_decorator(has_ownership, 'get')
 # @method_decorator(has_ownership, 'post')
 
-# class AccountDeleteView(DeleteView):
-#     model = User
-#     context_object_name = 'target_user'
-#     success_url = reverse_lazy('main:intro')
-#     template_name = 'delete.html'
+class AccountDeleteView(DeleteView):
+    model = User
+    context_object_name = 'target_user'
+    success_url = reverse_lazy('main:intro')
+    template_name = 'delete.html'
