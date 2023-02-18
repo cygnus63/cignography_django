@@ -1,0 +1,63 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css");            
+
+* {
+    font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #6f829b;
+    padding: 30px 30px;
+    
+}   
+
+.navbar-menu li {
+    padding : 8px 12px;
+}
+
+.navbar-menu li:hover{
+    /* border: 1px solid black; */
+    background-color: #606d7e;
+    border-radius: 10px;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin: 10px;
+    font-weight: lighter;
+    font-size: 2.5vh;
+    text-decoration: none;
+    color : white;
+    list-style : none;
+}
+
+.navbar-logo {
+    height: 100%;
+    /* width: 100%; */
+    /* display: flex; */
+}
+
+.navbar-logo img{
+    width: 10%; 
+    margin-right: 5px;
+    margin-left: 20px;
+}
+.navbar-logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-logo h1{
+    color: azure;
+}
+
+.navbar-btn { 
+    display: none;
+}

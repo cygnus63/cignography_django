@@ -1,0 +1,20 @@
+{% load static %}
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="{% url 'main:intro' %}">
+                <img src="{% static 'logo_white.png' %}" alt="logo" />
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <a href="{% url 'main:intro' %}">Intro</a>
+            <a href="{% url 'photoapp:photo'%}">Photos</a>
+        </div>
+        <a href="#" class="navbar-btn">
+            <img src="{% static "more.png"%}" alt="">
+        </a>
+    </nav>
+
+    <article></article>
+</body>
