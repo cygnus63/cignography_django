@@ -1,36 +1,60 @@
 {% extends 'base.html' %} {% load static %}
 
 {% block link %}
-    <link rel="stylesheet" href = {% static "style_intro.css" %}>
+    <link rel="stylesheet" href = {% static "main.css" %}>
+    <script src="https://unpkg.com/typeit@8.3.3/dist/index.umd.js"></script>
 {% endblock link %}
 
 {% block content %}
 
 <div class="container">
-    <div class="main-photos">
-        <img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/vsco_1.jpg">
-    </div>
 
     <div class="intro">
-        <h1>Hello</h1>
-        <h1>I'm Sunghoon Kim</h1>
-        
-        <div class="buttons_div"><a href = {% url 'photoapp:list' %}>Photo</a> </div>
-
-        {% if not user.is_authenticated %}
-            <div class="buttons_div">
-                <a href = "{% url 'accountapp:login' %}?next={{ request.path }}">Sign In</a>
-                <a href = "{% url 'accountapp:create' %}">Sign Up</a>
-            </div>
-            
-        {% else %}
-            <div class="buttons_div">
-                <a href = "{% url 'accountapp:logout' %}?next={{ request.path }}">Logout</a>
-                <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
-            </div>
-
-        {% endif %}
+        <h1 id="typeit"></h1>
     </div>
+
+    <div class="buttons">
+        <div class="btn btn-primary rounded-pill mt-3">
+            <a href = {% url 'photoapp:list' %}>Photo</a>
+        </div>
+    </div>
+
+    {% comment %} <div class="buttons_div"><a href = {% url 'photoapp:list' %}>Photo</a> </div> {% endcomment %}
+
+    {% comment %} {% if not user.is_authenticated %}
+        <div class="buttons_div">
+            <a href = "{% url 'accountapp:login' %}?next={{ request.path }}">Sign In</a>
+            <a href = "{% url 'accountapp:create' %}">Sign Up</a>
+        </div>
+        
+    {% else %}
+        <div class="buttons_div">
+            <a href = "{% url 'accountapp:logout' %}?next={{ request.path }}">Logout</a>
+            <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
+        </div>
+
+    {% endif %} {% endcomment %}
 </div>
-</div>
+
+<script>
+    document. addEventListener('DOMContentLoaded', () => {
+        let typeitInstance = new TypeIt('#typeit', {
+            lifeLike: false,
+            speed: 150,
+            deleteSpeed: 80,
+            startDelay: 500
+        })
+        
+        .type("I'M DEVELOPER")
+        .pause(500)
+        .delete(9)
+        .type("PHOTOGRAPHER")
+        .pause(500)
+        .delete()
+        .type("SUNGHOON KIM")
+
+        .go();
+    });
+</script>
+
 {% endblock %}

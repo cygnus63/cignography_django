@@ -3,19 +3,24 @@
 
 <div>
     <div style="text-align: center; max-width: 500px; margin: 4rem auto">
-        <h1>{{target_image.content}}</h1>
+        <h1>{{target_image.title}}</h1>
         
         <img style='max-width:500px' src="{{target_image.image.url}}" alt = "">
-
+        
         <p> 작성자 : {{target_image.writer}}</p>
         <p> 접속자 : {{request.user}}</p>
+        
+        <div class=''>
+            {{target_image.content}}</h1>
+        </div>
 
-
-        <a class= 'btn btn-dark rounded-pill col-3 m-2' href="{% url 'photoapp:update' pk=target_image.pk %}">
-            <p>Update</p>
+        <a class= 'btn btn-dark rounded-pill col-3' 
+            href="{% url 'photoapp:update' pk=target_image.pk %}">
+                <p>Update</p>
         </a>
-        <a class= 'btn btn-dark rounded-pill col-3 m-2' href="{% url 'photoapp:delete' pk=target_image.pk %}">
-            <p>delete</p>
+        <a class= 'btn btn-danger rounded-pill col-3' 
+            href="{% url 'photoapp:delete' pk=target_image.pk %}">
+                <p>Delete</p>
         </a>
     </div>
 
