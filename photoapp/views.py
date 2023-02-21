@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.urls import reverse
-from django.views.generic import CreateView, DetailView, UpdateView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, DetailView, UpdateView, ListView, DeleteView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
@@ -9,7 +9,7 @@ from photoapp.forms import ImageCreationForm
 from photoapp.models import Image
 from photoapp.decorators import image_ownership_required
 
-# Create your views here.
+# Create your views here
 
 def photo(request):
     return render(request, 'photoapp/photos.html')
@@ -48,3 +48,18 @@ class ImageUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse ('photoapp:detail', kwargs={'pk': self.object.pk})
+
+class ImageListView(ListView):
+    model = Image
+    context_object_name = 'photo_list'
+    template_name = 'photoapp/list.html'
+    paginate_by = 25
+
+@method_decorator(image_ownership_required, 'get')
+@method_decorator(image_ownership_required, 'post')
+
+class ImageDeleteView(DeleteView):
+    model = Image
+    success_url = reverse_lazy('photoapp:list')
+    context_object_name = 'target_image'
+    template_name = 'photoapp/delete.html'

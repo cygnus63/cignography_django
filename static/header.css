@@ -1,53 +1,48 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css");            
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css");
 
 * {
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     margin: 0;
     padding: 0;
 }
-
-
 .navbar{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: row;
     background-color: #6f829b;
     padding: 30px 30px;
-    
 }   
 
-.navbar-menu li {
-    padding : 8px 12px;
-}
-
-.navbar-menu li:hover{
-    /* border: 1px solid black; */
-    background-color: #606d7e;
-    border-radius: 10px;
-}
 
 .navbar-menu {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
     margin: 10px;
-    font-weight: lighter;
-    font-size: 2.5vh;
+    
+    font-size: 15px;
     text-decoration: none;
     color : white;
     list-style : none;
 }
-
-.navbar-logo {
-    height: 100%;
-    /* width: 100%; */
-    /* display: flex; */
+.navbar-menu a:hover {
+    background-color: rgb(69, 75, 81);
+    border-radius: 10px;
 }
 
-.navbar-logo img{
+.navbar-menu a {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-decoration: none;
+    padding : 3px 10px;
+}
+.navbar-logo {
+    height: 100%;
+    width: auto;
+}
+
+.navbar-logo a img{
     width: 10%; 
-    margin-right: 5px;
-    margin-left: 20px;
+    margin: 2%;
 }
 .navbar-logo a{
     text-decoration: none;

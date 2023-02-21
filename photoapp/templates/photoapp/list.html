@@ -1,0 +1,54 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<html>
+    <style>
+        .container{
+            margin-top: 20px;
+        }
+
+        .container div {
+            width: 250px;
+            {% comment %} height: 500px; {% endcomment %}
+            {% comment %} background-color: antiquewhite; {% endcomment %}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            {% comment %} border: 1px solid black; {% endcomment %}
+        }
+
+        .container img {
+            width: 100%;
+        }
+
+    </style>
+    {% if photo_list %}
+        <div class="container">
+            {% for image in photo_list %}
+            <a href="{% url 'photoapp:detail' pk=image.pk %}">
+                {% include 'photoapp/snippets/card.html' with image=image %}
+            </a>
+            {% endfor %}
+        </div>
+        
+    {% else %}
+        <div>
+            No Images
+        </div>
+    
+    {% endif %}
+
+    {% include 'photoapp/snippets/pagination.html' with page_obj=page_obj %}
+
+    <div style='text-align: center;'>
+        <a href="{% url 'photoapp:create'%}" class="btn btn-dark rounded-pill col-6 mt-3">
+            Create Image
+        </a>
+    </div>
+    <script src="{% static 'js/magicgrid.js'%}"></script>
+
+</html>
+
+{% endblock %}

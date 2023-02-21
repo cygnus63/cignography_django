@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 
 {% block link %}
     <link rel="stylesheet" href = {% static "style_intro.css" %}>
@@ -9,26 +8,15 @@
 
 <div class="container">
     <div class="main-photos">
-        <a href="">
-            <img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/vsco_1.jpg">
-        </a>
+        <img src="https://cdn.jsdelivr.net/gh/cignography/cignography.github.io@main/vsco_1.jpg">
     </div>
+
     <div class="intro">
         <h1>Hello</h1>
         <h1>I'm Sunghoon Kim</h1>
-
-        <!-- <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit libero doloribus corporis vitae reiciendis neque, quos, repellendus odit non reprehenderit molestiae ipsa blanditiis officia consequatur id soluta iure fugiat error.
-            나머지는 군대 다녀오고 해볼게요 <br/>
-        </p> -->
         
-        <div class="buttons_div">
-            <a href = {% url 'photoapp:photo' %}>Photo</a>
-            {% comment %} <a href = {% url 'accountapp:create' %}>Sign Up</a> {% endcomment %}
+        <div class="buttons_div"><a href = {% url 'photoapp:list' %}>Photo</a> </div>
 
-            {% comment %} <a onclick="fetchPage('photo.html')">Photo</a>
-            <a onclick="fetchPage('intro.html')">About</a> {% endcomment %}
-        </div>
         {% if not user.is_authenticated %}
             <div class="buttons_div">
                 <a href = "{% url 'accountapp:login' %}?next={{ request.path }}">Sign In</a>
@@ -40,6 +28,7 @@
                 <a href = "{% url 'accountapp:logout' %}?next={{ request.path }}">Logout</a>
                 <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
             </div>
+
         {% endif %}
     </div>
 </div>

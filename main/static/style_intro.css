@@ -5,12 +5,22 @@
     
 }
 
+.buttons_div a, p {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+button {
+    padding: 0;
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
     align-items: center;
-    /* margin : 2vh; */
     box-sizing: border-box;
     margin: 0 5vh;
     height : calc((100 * var(--vh)) - var(--navbar-height));
