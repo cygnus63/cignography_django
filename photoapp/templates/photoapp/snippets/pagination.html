@@ -1,5 +1,7 @@
 <div style="text-align: center; margin: 1rem 0;">
+
     {% if page_obj.has_previous %}
+    
     <a href= "{% url 'photoapp:list' %}?page={{ page_obj.previous_page_number }}"
         class="btn btn-secondary rounded-pill"> 
         {{ page_obj.previous_page_number }}

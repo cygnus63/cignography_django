@@ -4,7 +4,6 @@ from django.db import models
 class Image(models.Model):
     writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='image', null=True)
     
-    title = models.CharField(max_length=100, null=True)
     image = models.ImageField(null=False, upload_to="images/")
     content = models.TextField(null=True)
     

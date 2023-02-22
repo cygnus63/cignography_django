@@ -7,15 +7,40 @@
 
 {% block content %}
 
+<script>
+    document. addEventListener('DOMContentLoaded', () => {
+        let typeitInstance = new TypeIt('#typeit', {
+            lifeLike: false,
+            speed: 150,
+            deleteSpeed: 80,
+            startDelay: 500
+        })
+        
+        .type("I'M DEVELOPER")
+        .pause(500)
+        .delete(9)
+        .type("PHOTOGRAPHER")
+        .pause(500)
+        .delete()
+        .type("CIGNOGRAPHY")
+        .pause(1000)
+        .type(' :')
+        
+
+        .go();
+    });
+</script>
+
 <div class="container">
-
-    <div class="intro">
-        <h1 id="typeit"></h1>
-    </div>
-
-    <div class="buttons">
-        <div class="btn btn-primary rounded-pill mt-3">
-            <a href = {% url 'photoapp:list' %}>Photo</a>
+    <div class="content">
+        <div class="intro">
+            <h1 id="typeit"></h1>
+        </div>
+    
+        <div class="buttons">
+            <div class="btn btn-primary rounded-pill mt-3">
+                <a href = {% url 'photoapp:list' %}>Photo</a>
+            </div>
         </div>
     </div>
 
@@ -34,27 +59,9 @@
         </div>
 
     {% endif %} {% endcomment %}
+
 </div>
 
-<script>
-    document. addEventListener('DOMContentLoaded', () => {
-        let typeitInstance = new TypeIt('#typeit', {
-            lifeLike: false,
-            speed: 150,
-            deleteSpeed: 80,
-            startDelay: 500
-        })
-        
-        .type("I'M DEVELOPER")
-        .pause(500)
-        .delete(9)
-        .type("PHOTOGRAPHER")
-        .pause(500)
-        .delete()
-        .type("SUNGHOON KIM")
 
-        .go();
-    });
-</script>
 
 {% endblock %}

@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href = {% static "detail.css" %}>
+    <script src="https://kit.fontawesome.com/0a0459ea94.js" crossorigin="anonymous"></script>
+{% endblock link %}
+
 {% block content %}
 
-<div>
-    <div style="text-align: center; max-width: 500px; margin: 4rem auto">
-        <h1>{{target_image.title}}</h1>
+<div class='container'>
+    <div class='detail'>
+        {% comment %} <div class="title">
+            <h1>{{target_image.title}}</h1>
+        </div> {% endcomment %}
+
+        <div class="images">
+            <img src="{{target_image.image.url}}" alt = "">
+        </div>
         
-        <img style='max-width:500px' src="{{target_image.image.url}}" alt = "">
+        {% comment %} <p> 작성자 : {{target_image.writer}}</p>
+        <p> 접속자 : {{request.user}}</p> {% endcomment %}
         
-        <p> 작성자 : {{target_image.writer}}</p>
-        <p> 접속자 : {{request.user}}</p>
-        
-        <div class=''>
+        <div class='content'>
             {{target_image.content}}</h1>
         </div>
 
-        <a class= 'btn btn-dark rounded-pill col-3' 
+        {% if  user.is_superuser %}
+        
+        <div class="buttons">
+            <a class= 'btn btn-dark rounded-pill col-3 mt-2' 
             href="{% url 'photoapp:update' pk=target_image.pk %}">
-                <p>Update</p>
+            <p>Update</p>
         </a>
-        <a class= 'btn btn-danger rounded-pill col-3' 
-            href="{% url 'photoapp:delete' pk=target_image.pk %}">
-                <p>Delete</p>
+        <a class= 'btn btn-danger rounded-pill col-3 mt-2' 
+        href="{% url 'photoapp:delete' pk=target_image.pk %}">
+        <p>Delete</p>
         </a>
+    {% endif %}
+</div>
     </div>
 
 </div>

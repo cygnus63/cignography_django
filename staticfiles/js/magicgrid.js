@@ -295,13 +295,21 @@ MagicGrid.prototype.listen = function listen() {
 };
 
 // module.exports = MagicGrid;
-window.addEventListener('load', function() {
-    var magicGrid = new MagicGrid({
-        container: '.container',
-        animate: true,
-        gutter: 30,
-        maxColumns: 3,
-        useMin: true
-    });
-    magicGrid.listen();
+
+let magicGrid = new MagicGrid({
+    container: ".container",
+    animate: true,
+    gutter: 25,
+    static: true,
+    useMin: true,
 });
+
+var masonrys = document.getElementsByTagName('img');
+
+for (let i = 0; i < masonrys.length; i++) {
+    masonrys[i].addEventListener('load', function () {
+        magicGrid.positionItems();
+    }, false);
+}
+
+magicGrid.listen();

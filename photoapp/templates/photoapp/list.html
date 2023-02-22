@@ -1,29 +1,13 @@
 {% extends 'base.html' %} 
-{% block content %}
 {% load static %}
 
+{% block link %}
+    <link rel="stylesheet" href = {% static "list.css" %}>
+{% endblock link %}
+
+{% block content %}
+
 <html>
-    <style>
-        .container{
-            margin-top: 20px;
-        }
-
-        .container div {
-            width: 250px;
-            {% comment %} height: 500px; {% endcomment %}
-            {% comment %} background-color: antiquewhite; {% endcomment %}
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 1rem;
-            {% comment %} border: 1px solid black; {% endcomment %}
-        }
-
-        .container img {
-            width: 100%;
-        }
-
-    </style>
     {% if photo_list %}
         <div class="container">
             {% for image in photo_list %}
@@ -47,7 +31,11 @@
             Create Image
         </a>
     </div>
+
     <script src="{% static 'js/magicgrid.js'%}"></script>
+    <script>
+        magicGrid.listen();
+    </script>
 
 </html>
 
