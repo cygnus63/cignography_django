@@ -10,3 +10,12 @@ def image_ownership_required(func):
         return func(request, *args, **kwargs)
     
     return decorated
+
+def is_superuser(func):
+    def decorated(request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return HttpResponseForbidden()
+        
+        return func(request, *args, **kwargs)
+    
+    return decorated

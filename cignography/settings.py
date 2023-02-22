@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'photoapp',
     'accountapp',
     'bootstrap4',
+    'guestbook',
 ]
 
 MIDDLEWARE = [

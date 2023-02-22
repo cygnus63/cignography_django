@@ -38,15 +38,17 @@
         </div>
     
         <div class="buttons">
-            <div class="btn btn-primary rounded-pill mt-3">
-                <a href = {% url 'photoapp:list' %}>Photo</a>
-            </div>
+            <a href = {% url 'photoapp:list' %}>
+                <div class="btn btn-primary rounded-pill mt-3">
+                Photo
+                </div>
+            </a>
         </div>
     </div>
 
-    {% comment %} <div class="buttons_div"><a href = {% url 'photoapp:list' %}>Photo</a> </div> {% endcomment %}
+    <div class="buttons_div"><a href = {% url 'photoapp:list' %}>Photo</a> </div>
 
-    {% comment %} {% if not user.is_authenticated %}
+    {% if not user.is_authenticated %}
         <div class="buttons_div">
             <a href = "{% url 'accountapp:login' %}?next={{ request.path }}">Sign In</a>
             <a href = "{% url 'accountapp:create' %}">Sign Up</a>
@@ -58,7 +60,7 @@
             <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
         </div>
 
-    {% endif %} {% endcomment %}
+    {% endif %}
 
 </div>
 

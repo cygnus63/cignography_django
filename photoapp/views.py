@@ -7,15 +7,15 @@ from django.contrib.auth.decorators import login_required
 
 from photoapp.forms import ImageCreationForm
 from photoapp.models import Image
-from photoapp.decorators import image_ownership_required
+from photoapp.decorators import image_ownership_required, is_superuser
 
 # Create your views here
 
 def photo(request):
     return render(request, 'photoapp/photos.html')
 
-@method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
+@method_decorator(is_superuser, 'get')
+@method_decorator(is_superuser, 'post')
 
 class ImageCreateView(CreateView):
     model = Image

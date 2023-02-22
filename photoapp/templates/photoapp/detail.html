@@ -21,11 +21,15 @@
         {% comment %} <p> 작성자 : {{target_image.writer}}</p>
         <p> 접속자 : {{request.user}}</p> {% endcomment %}
         
+        {% if target_image.content %}
+
         <div class='content'>
             {{target_image.content}}</h1>
         </div>
 
-        {% if  user.is_superuser %}
+        {% endif %}
+        
+        {% if user.is_superuser %}
         
         <div class="buttons">
             <a class= 'btn btn-dark rounded-pill col-3 mt-2' 
@@ -36,6 +40,7 @@
         href="{% url 'photoapp:delete' pk=target_image.pk %}">
         <p>Delete</p>
         </a>
+
     {% endif %}
 </div>
     </div>

@@ -61,4 +61,4 @@ class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
     success_url = reverse_lazy('main:intro')
-    template_name = 'delete.html'
+    template_name = 'accountapp/delete.html'

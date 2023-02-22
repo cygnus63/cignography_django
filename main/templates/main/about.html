@@ -2,11 +2,11 @@
 
 {% block link %}
     <link rel="stylesheet" href = {% static "about.css" %}>
+    <script src="https://unpkg.com/typeit@8.3.3/dist/index.umd.js"></script>
     <script src="https://kit.fontawesome.com/0a0459ea94.js" crossorigin="anonymous"></script>
 {% endblock link %}
 
 {% block content %}
-
 
 <div class="container">
     <div class="about">
@@ -14,9 +14,7 @@
             <img src="{% static "mimo.jpg" %}" alt="profile_image">
         </div>
         <div class="info">
-            <div class="name">
-                SUNGHOON KIM
-            </div>
+            <div class="name">SUNGHOON KIM</div>
             <div class="links">
                 <a href="https://unsplash.com/@cignography" target="_blank">
                     <p><i class="fa-brands fa-unsplash fa-2xl"></i>UNSPLASH</p>

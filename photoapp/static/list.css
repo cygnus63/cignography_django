@@ -18,8 +18,13 @@
 }
 
 .container img:hover {
-    transform: scale(1.01);
-    transition: 0.3s;
+    transform: scale(1.05);
+    transition: 0.15s ease-in-out;
+}
+
+.container img:not(:hover) {
+    transform: scale(1);
+    transition: 0.15s ease-in-out;
 }
 
 
