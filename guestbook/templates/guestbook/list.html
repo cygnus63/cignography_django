@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href = {% static "guestbook.css" %}>
+{% endblock link %}
+
+{% block content %}
+
+	{% comment %} <div><a href="{% url "guestbook:create" %}"> Create </a></div>	 {% endcomment %}
+
+	<div style = 'margin : 20px;' class="comments">
+		{% if comment_list %}
+			{% for comment in comment_list %}
+				{% include 'guestbook/snippets/comment_card.html' with comment=comment %}
+			{% endfor %}
+	
+		{% else %}
+			no comment
+	
+		{% endif %}
+	</div>
+
+	<div class="create-messages">
+		{% include 'guestbook/create.html' %}
+	</div>
+
+{% endblock %}

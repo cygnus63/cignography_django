@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse, reverse_lazy
 
-from main.views import intro
 # from accountapp.models import Texts
 # Create your views here.
 
@@ -14,18 +13,11 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('main:intro')
     template_name = 'create.html'
 
-
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse, reverse_lazy
-# Create your views here.
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+
 from accountapp.forms import AccountUpdateForm
 from accountapp.decorators import account_ownership_required
 from django.utils.decorators import method_decorator
-
 from django.contrib.auth.decorators import login_required
 
 has_ownership = [

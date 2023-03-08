@@ -1,0 +1,4 @@
+<div class="card">
+    {{comment.writer}}  :  {{comment.comment}} : {{comment.pk}}
+    <a href="{% url 'guestbook:delete' pk=comment.pk %}">x</a>
+</div>

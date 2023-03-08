@@ -1,0 +1,19 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    margin: 40%;
+}
+.card{
+    margin : 0 20%;
+    padding : 2%;
+    border: none;
+}
+
+.create-messages {
+    margin : 3% 20%
+}
+
+/* .comments {
+    display: flex;
+    justify-content: center;
+} */

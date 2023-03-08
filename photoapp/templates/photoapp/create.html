@@ -7,6 +7,7 @@
         <div class="mb-4">
             <h4>Image Create</h4>
         </div>
+        
         <form action="{% url 'photoapp:create' %}" method = 'post' enctype='multipart/form-data'>
             {% csrf_token %} 
             {% bootstrap_form form %}
