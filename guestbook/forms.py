@@ -19,13 +19,13 @@ class CommentCreationForm(ModelForm):
             'writer': forms.TextInput(
                 attrs={
                     'class': 'form-control d-inline-block mr-2',
-                    'placeholder': '아이디',
+                    'placeholder': '작성자',
                 }
             ),
             'password': forms.PasswordInput(
                 attrs={
                     'class': 'form-control d-inline-block mr-2',
-                    'placeholder': '확인코드'
+                    'placeholder': '비밀번호'
                 }
             ),
 

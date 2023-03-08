@@ -1,4 +1,14 @@
 <div class="card">
-    {{comment.writer}}  :  {{comment.comment}} : {{comment.pk}}
-    <a href="{% url 'guestbook:delete' pk=comment.pk %}">x</a>
+    <div class="info">
+        <div class="writer"> {{comment.writer}} </div>
+        <div class="comment"> {{comment.comment}} </div>
+        <div class="date"> {{comment.date}} </div>
+    </div>
+    <div class='delete-btn'>
+        <a href="{% url 'guestbook:delete' pk=comment.pk %}">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </a>
+    </div>
 </div>

@@ -3,7 +3,6 @@
 
 * {
     font-family: 'Pretendard';
-    
 }
 
 .buttons {
@@ -20,7 +19,6 @@
 }
 
 .container {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +61,19 @@ h6:hover{
     100% {
         opacity: 1;
     }
+}
+
+.material-symbols-outlined {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 48
 }
 
 /* @media (max-width:767px) {    

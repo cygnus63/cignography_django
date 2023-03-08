@@ -30,7 +30,7 @@ class CommentListView(ListView, FormMixin):
     form_class = CommentCreationForm
     context_object_name = 'comment_list'
     template_name = 'guestbook/list.html'
-    paginatio_by = 30
+    paginate_by = 3
 
 @method_decorator(is_yours, 'post')
 

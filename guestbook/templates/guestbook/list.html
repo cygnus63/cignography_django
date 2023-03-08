@@ -4,26 +4,31 @@
 
 {% block link %}
     <link rel="stylesheet" href = {% static "guestbook.css" %}>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 {% endblock link %}
 
 {% block content %}
 
 	{% comment %} <div><a href="{% url "guestbook:create" %}"> Create </a></div>	 {% endcomment %}
+	<div class="container">
+		<div style = 'margin : 20px;' class="comments">
+			{% if comment_list %}
+				{% for comment in comment_list %}
+					{% include 'guestbook/snippets/comment_card.html' with comment=comment %}
+				{% endfor %}
+		
+			{% else %}
+				no comment
+		
+			{% endif %}
+		</div>
 
-	<div style = 'margin : 20px;' class="comments">
-		{% if comment_list %}
-			{% for comment in comment_list %}
-				{% include 'guestbook/snippets/comment_card.html' with comment=comment %}
-			{% endfor %}
-	
-		{% else %}
-			no comment
-	
-		{% endif %}
-	</div>
+		{% include 'guestbook/snippets/pagination.html' with page_obj=page_obj %}
 
-	<div class="create-messages">
-		{% include 'guestbook/create.html' %}
+	
+		<div class="create-messages">
+			{% include 'guestbook/create.html' %}
+		</div>
 	</div>
 
 {% endblock %}
