@@ -27,7 +27,6 @@
     display: flex;
     justify-content: space-around;
     margin: 2%;
-    
 }
 
 .navbar-menu a{
@@ -44,4 +43,25 @@
 .navbar-menu a:hover{
     background-color: #59677b;
     border-radius: 1rem;
+}
+
+@media (max-width:767px) {    
+    .navbar-logo {
+        width: 20%;
+    }
+
+    .navbar-menu a{
+        font-size: 2vh;
+        padding: 8px;
+        /* border: 1px solid black; */
+        /* text-decoration: none; */
+        /* margin: 0px; */
+        /* padding: 10px; */
+    }
+    
+    .navbar-menu{
+        margin: 0 15px;
+        /* border: 1px solid black; */
+        justify-content: space-around;
+    }
 }

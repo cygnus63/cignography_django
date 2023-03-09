@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from photoapp.views import ImageListView
 
 urlpatterns = [
+    # path('', ImageListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('main/', include('main.urls')),
+    path('', include('main.urls')),
     path('photos/', include('photoapp.urls')),
     path('accounts/', include('accountapp.urls')),
     path('guestbook/', include('guestbook.urls')),

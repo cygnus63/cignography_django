@@ -1,6 +1,10 @@
 
 .container{
-    margin-top: 20px;
+    /* justify-content: center; */
+    /* width: 80%; */
+    /* border: 1px solid black; */
+    padding: 20px;
+    margin: 10 auto;
 }
 
 .container div {
@@ -8,8 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
-    object-fit: cover;
+    /* object-fit: cover; */
+
 }
 
 .container img {

@@ -11,9 +11,9 @@
     {% if photo_list %}
         <div class="container">
             {% for image in photo_list %}
-            <a href="{% url 'photoapp:detail' pk=image.pk %}">
-                {% include 'photoapp/snippets/card.html' with image=image %}
-            </a>
+                <a href="{% url 'photoapp:detail' pk=image.pk %}">
+                    {% include 'photoapp/snippets/card.html' with image=image %}
+                </a>
             {% endfor %}
         </div>
         
@@ -34,6 +34,7 @@
     </div>
 
     {% endif %}
+
     <script src="{% static 'js/magicgrid.js'%}"></script>
 
 </html>

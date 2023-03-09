@@ -26,11 +26,11 @@ class CommentCreateView(CreateView):
 
 class CommentListView(ListView, FormMixin):
     model = Comment
-    ordering = '-date'
+    ordering = '-id'
     form_class = CommentCreationForm
     context_object_name = 'comment_list'
     template_name = 'guestbook/list.html'
-    paginate_by = 3
+    paginate_by = 10
 
 @method_decorator(is_yours, 'post')
 
