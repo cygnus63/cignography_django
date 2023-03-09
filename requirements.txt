@@ -6,6 +6,7 @@ django-bootstrap4==22.3
 django-environ==0.9.0
 django_debug_toolbar==3.8.1
 future
+gunicorn==20.1.0
 macholib
 Pillow==9.4.0
 six
