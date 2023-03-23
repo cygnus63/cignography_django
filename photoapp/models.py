@@ -9,7 +9,7 @@ def media_directory_path(instance, filename):
     return f"images/{random_string}.jpg"
 
 class Image(models.Model):
-    writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='image', null=True)
+    # writer = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='image', null=True)
     image = models.ImageField(null=False, upload_to=media_directory_path)
     content = models.TextField(null=True, blank=True)
     created_at = models.DateField(auto_now_add=True, null=True)
