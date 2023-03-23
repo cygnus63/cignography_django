@@ -84,7 +84,7 @@ class ImageListView(ListView):
     ordering = '-id'
     context_object_name = 'photo_list'
     template_name = 'photoapp/list.html'
-    paginate_by = 25
+    paginate_by = 20
 
 @method_decorator(image_ownership_required, 'get')
 @method_decorator(image_ownership_required, 'post')

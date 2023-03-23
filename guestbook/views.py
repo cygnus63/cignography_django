@@ -16,9 +16,9 @@ def read_secret(secret_name):
 
     return secret
 
-bot = telegram.Bot(token=read_secret('CGN_TG_TOKEN'))
-
 def telegram_send(writer, message):
+
+    bot = telegram.Bot(token=read_secret('CGN_TG_TOKEN'))
     link = 'https://cigno.kr/guestbook/'
     button = [[telegram.InlineKeyboardButton('자세히 보기', url = link)]]
     reply_markup = telegram.InlineKeyboardMarkup(button)
@@ -42,7 +42,7 @@ class CommentCreateView(CreateView):
 
         print(writer + message)
 
-        telegram_send(writer, message)
+        # telegram_send(writer, message)
 
         return super().form_valid(form)
 

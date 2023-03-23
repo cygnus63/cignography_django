@@ -33,7 +33,7 @@ class CommentCreationForm(ModelForm):
             'comment': forms.Textarea(
                 attrs={
                     'class': 'form-control',    
-                    'placeholder': '※ 위 비밀번호는 삭제하는데에만 사용되므로 자주 사용하는 비밀번호는 지양해주세요 :)',
+                    'placeholder': '바른말 고운말 :)',
                     'rows': 5
                 }
             )

@@ -8,7 +8,6 @@
 
     padding: 0;
     padding-top: 10px;
-    /* margin: 0 auto; */
     margin: 3% auto;
 }
 
@@ -19,6 +18,11 @@
     align-items: center;
 }
 
+.photo:hover {
+    box-shadow: 0 0 20px 1px rgb(151, 151, 151);
+    transition: 0.2s ease-in-out;
+}
+
 .container img {
     width: 100%;
     animation: fadeIn 1.5s ease-in-out forwards;
@@ -26,7 +30,7 @@
 }
 
 .container img:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     transition: 0.2s ease-in-out;
 }
 
@@ -48,5 +52,12 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width:767px) {    
+    .photo{
+        width: 150px;
+        box-shadow: 0 0 10px 0.5px rgb(151, 151, 151);
     }
 }
