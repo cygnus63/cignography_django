@@ -1,0 +1,67 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
+
+* {
+    font-family: "Pretendard";
+}
+
+.container {
+    width: 100vw;
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 3% auto;
+}
+
+.buttons {
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.btn > a {
+    text-decoration: none;
+    color: white;
+    margin: 0px;
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#typeit {
+    justify-content: center;
+    align-items: center;
+    font-family: "Tilt Warp", sans-serif;
+    font-size: 6rem;
+}
+
+h6:hover {
+    background: black;
+    color: aliceblue;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    #typeit {
+        text-align: left;
+        font-family: "Tilt Warp", cursive;
+        font-size: 2.7rem;
+        margin: 5vw;
+    }
+}

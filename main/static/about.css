@@ -1,0 +1,145 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css");            
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    /* padding: 5%; */
+    margin: 3% auto;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about {
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.myImage {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.myImage img {
+    width : 15vw;
+    height: 15vw;
+    border-radius: 5vw;
+    object-fit: cover;
+    margin : 10%;
+    box-shadow: 0 0 10px 3px rgb(40, 58, 80);
+
+}
+
+.info {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin : 5%;
+}
+
+.name{    
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 5rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.links a{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.fa-brands, .fa-envelope {
+    margin: 10px;
+}
+
+.comments {
+    display: flex;
+    height: auto;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;    
+
+}
+
+.comments > i {
+    margin: 30px;
+}
+/* .info p {
+    font-size: 2rem;
+    text-align: center;
+    vertical-align: center;
+} */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width:767px) {    
+    .container{
+        width: 95vw;
+        height: auto;
+    }
+    
+    .name{
+        font-size: 3rem;
+        padding: 2%;
+    }
+    
+    .links{
+        flex-direction: column;
+        font-size: 12px
+    }
+    
+    .about{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .myImage img{
+        width : 22vh;
+        height: 22vh;
+        
+    }
+    
+    .myImage {
+        margin: 3%;
+    }
+
+    .info{
+        margin: 3%;
+        display: flex;
+
+    }
+}

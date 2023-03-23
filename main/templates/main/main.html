@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href = {% static "main.css" %}>
+    <script src="https://unpkg.com/typeit@8.3.3/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{% endblock link %}
+
+{% block content %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let typeitInstance = new TypeIt('#typeit', {
+            lifeLike: false,
+            speed: 150,
+            deleteSpeed: 80,
+            startDelay: 500
+        })
+        
+        .type("CIGNOGRAPHY")
+        .pause(1000)
+        .type(' :')
+        .go();
+    });
+</script>
+
+<div class="container">
+    <div class="content">
+        <div class="intro">
+            <h1 id="typeit"></h1>
+        </div>
+    
+        <div class="buttons">
+            <a href = {% url 'photoapp:list' %}>
+                <div class="btn btn-primary rounded-pill mt-3">
+                    Photo
+                </div>
+            </a>
+
+            <a href = {% url 'guestbook:guestbook' %}>
+                <div class="btn btn-primary rounded-pill mt-3">
+                    Guestbook
+                </div>
+            </a>
+        </div>
+    </div>
+
+    {% comment %} {% if not user.is_authenticated %}
+        <div class="buttons_div">
+            <a href = "{% url 'accountapp:login' %}?next={{ request.path }}">Sign In</a>
+            <a href = "{% url 'accountapp:create' %}">Sign Up</a>
+        </div>
+        
+    {% else %}
+        <div class="buttons_div">
+            <a href = "{% url 'accountapp:logout' %}?next={{ request.path }}">Logout</a>
+            <a href = "{% url 'accountapp:detail' pk=user.pk %}">MyPage</a>
+        </div>
+
+    {% endif %} {% endcomment %}
+</div>
+
+{% endblock %}

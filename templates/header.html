@@ -1,0 +1,18 @@
+{% load static %}
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="{% url 'main:intro' %}">
+                <img src="{% static 'logo_white.png' %}" alt="logo" />
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <a href="{% url 'photoapp:list'%}"><span>Photo</span></a>
+            <a href="">|</a>
+            <a href="{% url 'guestbook:guestbook'%}"><span>GuestBook</span></a>
+            <a href="">|</a>
+            <a href="{% url 'main:about'%}"><span>About</span></a>
+        </div>
+    </nav>
+</body>

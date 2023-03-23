@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href = {% static "about.css" %}>
+    <script src="https://unpkg.com/typeit@8.3.3/dist/index.umd.js"></script>
+    <script src="https://kit.fontawesome.com/0a0459ea94.js" crossorigin="anonymous"></script>
+{% endblock link %}
+
+{% block content %}
+
+<div class="container">
+    <div class="about">
+        <div class="myImage">
+            <img src="{% static "mimo.jpg" %}" alt="profile_image">
+        </div>
+        <div class="info">
+            <div class="name">SUNGHOON KIM</div>
+            <div class="links">
+                <a href="https://unsplash.com/@cignography" target="_blank">
+                    <p><i class="fa-brands fa-unsplash fa-2xl"></i>UNSPLASH</p>
+                </a>
+                <a href="https://www.instagram.com/cignography/" target="_blank">
+                    <p><i class="fa-brands fa-instagram fa-2xl"></i>INSTAGRAM</p>
+                </a>
+                <a href="mailto:cigno@cigno.kr" target="_blank">
+                    <p><i class="fa-regular fa-envelope fa-2xl"></i>EMAIL</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} <div class="comments">
+        <i class="fa-sharp fa-solid fa-quote-left fa-2xl"></i>
+        <div class="text">
+                영원한 기억은 없습니다.
+                그래서 기록이 필요합니다.
+        </div>
+        <i class="fa-sharp fa-solid fa-quote-right fa-2xl"></i>
+    </div> {% endcomment %}
+</div>
+
+{% endblock %}

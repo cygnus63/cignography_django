@@ -1,0 +1,95 @@
+
+* {
+    /* border: 1px solid black; */
+}
+
+.container {
+    margin: 3% auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 0 0 10px 1px rgb(151, 151, 151);
+    overflow-wrap: break-word;
+}
+
+.comments {
+    max-width: 600px;
+    width: 70%;
+    margin: 10px;
+    padding: 20px;
+}
+
+.message {
+    padding: 5px 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.delete-btn {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.writer {
+    font-weight: bold;
+}
+
+.create-messages {
+    margin: 30px;
+    max-width: 70%;
+    text-align: center;
+}
+
+.date {
+    padding-top: 6px;
+    font-size: 10px;
+}
+
+.material-symbols-outlined {
+    color: lightcoral;
+    font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+}
+
+.notext {
+    margin: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        /* border: 1px solid blue; */
+    }
+    .comments {
+        width: 80vw;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
