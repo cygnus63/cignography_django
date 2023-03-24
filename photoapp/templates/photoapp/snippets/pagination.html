@@ -2,21 +2,21 @@
 
     {% if page_obj.has_previous %}
     
-    <a href= "{% url 'photoapp:list' %}?page={{ page_obj.previous_page_number }}"
-        class="btn btn-secondary rounded-pill"> 
-        {{ page_obj.previous_page_number }}
+    <a href= "{% url 'photoapp:list' %}?page={{ page_obj.previous_page_number }}" class="btn btn-secondary rounded-pill"> 
+        {% comment %} {{ page_obj.previous_page_number }} {% endcomment %}
+        <
     </a>
     {% endif %}
-    
-    <a href= "{% url 'photoapp:list' %}?page={{ page_obj.number }}"
-        class="btn btn-secondary rounded-pill active"> 
+        
+    <a href= "{% url 'photoapp:list' %}?page={{ page_obj.number }}" class="btn btn-secondary rounded-pill active"> 
         {{ page_obj.number }}
     </a>
 
     {% if page_obj.has_next %}
-    <a href="{% url 'photoapp:list' %}?page={{ page_obj.next_page_number }}"
-    class="btn btn-secondary rounded-pill"> 
-    {{ page_obj.next_page_number }}
+    <a href="{% url 'photoapp:list' %}?page={{ page_obj.next_page_number }}" class="btn btn-secondary rounded-pill"> 
+    {% comment %} {{ page_obj.next_page_number }} {% endcomment %}
+        >
     </a>
+    
     {% endif %}
 </div>
