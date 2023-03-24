@@ -42,7 +42,7 @@ class CommentCreateView(CreateView):
 
         print(writer + message)
 
-        # telegram_send(writer, message)
+        telegram_send(writer, message)
 
         return super().form_valid(form)
 
