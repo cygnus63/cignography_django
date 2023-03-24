@@ -23,6 +23,11 @@
     transition: 0.2s ease-in-out;
 }
 
+.photo:not(:hover) {
+    box-shadow: none;
+    transition: 0.3s ease-in-out;
+}
+
 .container img {
     width: 100%;
     animation: fadeIn 1.5s ease-in-out forwards;
